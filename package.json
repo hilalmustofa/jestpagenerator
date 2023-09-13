@@ -1,0 +1,25 @@
+{
+    "name": "jestpagenerator",
+    "version": "1.0.0",
+    "description": "Generate Postman collection to Jest page object functions",
+    "main": "lib/jestpagenerator.js",
+    "bin": {
+        "jestconvert": "bin/jestpagenerator"
+    },
+    "dependencies": {
+        "commander": "^11.0.0"
+    },
+    "keywords": [
+        "jest",
+        "postman",
+        "test",
+        "converter"
+    ],
+    "author": "Hilal Mustofa",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hilalmusotfa/jestpageconverter.git"
+    },
+    "homepage": "https://github.com/hilalmustofa/jestpageconverter#readme"
+}
