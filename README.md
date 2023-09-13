@@ -21,7 +21,7 @@ jestconvert path/to/file.json
 that will generate .js files inside **pages** folder, you may need to create it first.
 
 ## Notes
-This is the first release, and you may need to adjust the code if your endpoints are complex, but at least now we don't have to create the script from scratch ;) Enjoy!
-
+- This is the first release, and you may need to adjust the code if your endpoints are complex, but at least now we don't have to create the script from scratch ;) Enjoy!
+- Remember to create a folder called *files* in your project's root directory if your endpoints contain files, because all files will be hardcode to *./files/yourfilename.extension*
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
