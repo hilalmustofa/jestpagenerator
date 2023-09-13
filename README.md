@@ -7,10 +7,10 @@ This tool creates separate .js files for each folder in your collection, with ea
 
 ## Installation
 
-To use JestPaGenerator, you can install it either globally or locally in your project using npm:
+To use JestPaGenerator, you can install it globally using npm:
 
 ```bash
-npm install jestpagenerator
+npm install -g jestpagenerator
 ```
 
 ## Usage
