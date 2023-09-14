@@ -25,7 +25,7 @@ To generate Jest page files, run the following command:
 ```bash
 jestconvert path/to/file.json
 ```
-that will generate .js files inside **pages** folder, you may need to create it first.
+that will generate .js or .ts files based on your prefered language, inside **pages** folder
 
 ## Notes
 - This is just a basic converter, and you may need to adjust the code if your endpoints are complex, but at least now we don't have to create the script from scratch ;) 
