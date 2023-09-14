@@ -2,13 +2,14 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const inquirer = require('inquirer');
 
 const asciiLogo = `
 ░░█ █▀▀ █▀ ▀█▀ █▀█ ▄▀█ █▀▀ █▀▀ █▄░█ █▀▀ █▀█ ▄▀█ ▀█▀ █▀█ █▀█
 █▄█ ██▄ ▄█ ░█░ █▀▀ █▀█ █▄█ ██▄ █░▀█ ██▄ █▀▄ █▀█ ░█░ █▄█ █▀▄
 `;
 
-const scriptPath = path.join(__dirname, '..', 'lib', 'jestpagenerator.js'); 
+const scriptPath = path.join(__dirname, '..', 'lib', 'jestpagenerator.js');
 const jsonDataPath = process.argv[2];
 
 function typeWriter(text, index, callback) {
@@ -18,7 +19,7 @@ function typeWriter(text, index, callback) {
       typeWriter(text, index + 1, callback);
     }, 50);
   } else {
-    setTimeout(callback, 100); 
+    setTimeout(callback, 100);
   }
 }
 
@@ -35,21 +36,41 @@ setTimeout(() => {
       process.exit(1);
     }
 
-    try {
-      setTimeout(() => { 
-        execSync(`node ${scriptPath} ${jsonDataPath}`, { stdio: 'inherit' });
-        const loadingInterval = setInterval(() => {
-          process.stdout.write('\u001b[2K\u001b[0G⏳ Converting...'); 
-        }, 20);
+    const questions = [
+      {
+        type: 'list',
+        name: 'language',
+        message: 'Choose a language:',
+        choices: ['JavaScript', 'TypeScript'],
+      },
+    ];
 
+    inquirer.prompt(questions).then((answers) => {
+      const language = answers.language.toLowerCase();
+
+      try {
         setTimeout(() => {
-          clearInterval(loadingInterval);
-          console.log('\u001b[2K\u001b[0G\u001b[32m💪Completed!\u001b[0m'); 
-        }, 2000);
-      }, 500); 
-    } catch (error) {
-      console.error('\u001b[2K\u001b[0G\u001b[31m✘ Error:\u001b[0m An error occurred while executing the script:', error.message); 
-      process.exit(1);
-    }
+          execSync(`node ${scriptPath} ${jsonDataPath} ${language}`, {
+            stdio: 'inherit',
+          });
+          const loadingInterval = setInterval(() => {
+            process.stdout.write('\u001b[2K\u001b[0G⏳ Converting...');
+          }, 20);
+
+          setTimeout(() => {
+            clearInterval(loadingInterval);
+            console.log(
+              '\u001b[2K\u001b[0G\u001b[32m💪Completed!\u001b[0m'
+            );
+          }, 2000);
+        }, 500);
+      } catch (error) {
+        console.error(
+          '\u001b[2K\u001b[0G\u001b[31m✘ Error:\u001b[0m An error occurred while executing the script:',
+          error.message
+        );
+        process.exit(1);
+      }
+    });
   });
 }, 100);
