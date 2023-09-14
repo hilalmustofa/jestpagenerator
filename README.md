@@ -1,7 +1,7 @@
 # JestPaGenerator
 Hello, 👋  
 **JestPaGenerator** is a command-line tool that generates Jest page object files based on data from a JSON Postman collection file.   
-This tool creates separate .js files for each folder in your collection, with each folder becoming a single .js script, and each endpoint within the folders becomes an exported async function that can be used in your test files.
+This tool creates separate .js or .ts files for each folder in your collection, with each folder becoming a single .js or .ts script, and each endpoint within the folders becomes an export function that can be used in your test files.
 
 ## Support Javascript & TypeScript
 - Javascript
