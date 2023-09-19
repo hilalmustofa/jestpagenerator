@@ -10,7 +10,10 @@ const asciiLogo = `
 `;
 
 const scriptPath = path.join(__dirname, '..', 'lib', 'jestpagenerator.js');
-const jsonDataPath = process.argv[2];
+console.log(process.argv[2])
+
+const jsonDataPath = path.resolve(process.cwd(), process.argv[2]);
+
 
 function typeWriter(text, index, callback) {
   if (index < text.length) {
@@ -50,7 +53,7 @@ setTimeout(() => {
 
       try {
         setTimeout(() => {
-          execSync(`node ${scriptPath} ${jsonDataPath} ${language}`, {
+          execSync(`node ${scriptPath} "${jsonDataPath}" ${language}`, {
             stdio: 'inherit',
           });
           const loadingInterval = setInterval(() => {
