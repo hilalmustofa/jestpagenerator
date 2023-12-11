@@ -52,6 +52,7 @@ setTimeout(() => {
       const language = answers.language.toLowerCase();
 
       try {
+        console.log("iki path " +jsonDataPath);
         setTimeout(() => {
           execSync(`node ${scriptPath} "${jsonDataPath}" ${language}`, {
             stdio: 'inherit',

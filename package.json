@@ -1,6 +1,6 @@
 {
     "name": "jestpagenerator",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Generate Postman collection to Jest page object functions",
     "main": "lib/jestpagenerator.js",
     "bin": {
