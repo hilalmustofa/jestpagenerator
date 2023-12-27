@@ -1,10 +1,10 @@
 {
-    "name": "jestpagenerator",
-    "version": "1.1.2",
+    "name": "postmantojest",
+    "version": "1.1.4",
     "description": "Generate Postman collection to Jest page object functions",
-    "main": "lib/jestpagenerator.js",
+    "main": "lib/postmantojest.js",
     "bin": {
-        "jestconvert": "bin/jestpagenerator"
+        "postmantojest": "bin/postmantojest"
     },
     "dependencies": {
         "commander": "^11.0.0",
@@ -14,13 +14,24 @@
         "jest",
         "postman",
         "test",
-        "converter"
+        "converter",
+        "api",
+        "automation",
+        "testing",
+        "postman-to-jest",
+        "postman-to-jest-converter",
+        "postman-to-jest-page-object",
+        "postman-to-jest-pom",
+        "postman-to-jest-pom-converter",
+        "postman-to-jest-pom-page-object",
+        "qa",
+        "qa-tools"
     ],
     "author": "Hilal Mustofa",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/hilalmustofa/jestpagenerator.git"
+        "url": "https://github.com/hilalmustofa/postmantojest.git"
     },
-    "homepage": "https://github.com/hilalmustofa/jestpagenerator#readme"
+    "homepage": "https://github.com/hilalmustofa/postmantojest#readme"
 }
